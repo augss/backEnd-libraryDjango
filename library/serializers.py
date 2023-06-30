@@ -12,6 +12,17 @@ class BookSerializer(ModelSerializer):
         model = Book
         fields = '__all__'
 
+class BookDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Book
+        fields = "__all__"
+        depth = 1
+
+class BookListSerializer(ModelSerializer):
+    class Meta:
+        model = Book
+        fields = ["id", "title", "price"]
+
 class CategorySerializer(ModelSerializer):
     class Meta:
         model = Category
