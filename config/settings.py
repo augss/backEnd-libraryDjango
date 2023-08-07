@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework_simplejwt",
     'corsheaders',
     'rest_framework',
     'library',
@@ -133,5 +134,6 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissions",
         "rest_framework.permissions.IsAuthenticated",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ]
 }
