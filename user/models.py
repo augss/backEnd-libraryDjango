@@ -25,5 +25,5 @@ class User(AbstractUser):
 
     class Meta:
         verbose_name = "User"
-        verbose_name_plural = "Usuários"
+        verbose_name_plural = "Users"
         ordering = ["-date_joined"]
