@@ -136,7 +136,10 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.DjangoModelPermissions",
         "rest_framework.permissions.IsAuthenticated",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ]
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 AUTH_USER_MODEL = "user.User"
