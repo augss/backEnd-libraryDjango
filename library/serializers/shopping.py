@@ -1,5 +1,7 @@
 from rest_framework.serializers import ModelSerializer, CharField
 
+from library.serializers import ShoppingItemSerializer
+
 from library.models import Shopping
 
 class ShoppingSerializer(ModelSerializer):
@@ -9,4 +11,5 @@ class ShoppingSerializer(ModelSerializer):
 
     user = CharField(source="user.email", read_only=True)
     status = CharField(source="get_status_display", read_only=True)
+    items = ShoppingItemSerializer(many=True, read_only=True)
 
