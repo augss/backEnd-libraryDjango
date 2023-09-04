@@ -1,6 +1,7 @@
 from django.db import models
 
 from library.models import Author, Category, Publisher
+from uploader.models import Image
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
@@ -10,6 +11,14 @@ class Book(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='books')
     publisher = models.ForeignKey(Publisher, on_delete=models.PROTECT, related_name='books')
     authors =  models.ManyToManyField(Author, related_name="books")
+    cover = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+    )
 
     def __str__(self):
         return f"{self.title} {self.amount}"
