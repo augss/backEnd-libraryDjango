@@ -6,3 +6,5 @@ class ShoppingSerializer(ModelSerializer):
     class Meta:
         model = Shopping
         fields = "__all__"
+        
+    user = CharField(source="user.email", read_only=True)
