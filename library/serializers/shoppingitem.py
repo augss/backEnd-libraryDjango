@@ -5,4 +5,5 @@ from library.models import Shopping, ShoppingItem
 class ShoppingItemSerializer(ModelSerializer):
     class Meta:
         model = ShoppingItem
-        fields = "__all__"
+        fields = ["book", "amount"]
+        depth = 2
